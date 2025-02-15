@@ -3,12 +3,14 @@ import Confetti from "react-confetti";
 
 const MOVES = [[-1, 0], [1, 0], [0, -1], [0, 1]];
 
-const getGridSize = (level) => (level <= 1 ? 6 : level <= 4 ? 8 : level <= 7 ? 10 : 12);
+const getGridSize = (level) => (level <= 1 ? 6 : level <= 4 ? 8 : level <= 7 ? 10 :12);
 const getZombieCount = (level) => {
     if (level === 1) return 1;
     if (level >= 2 && level <= 4) return 2;
     if (level >= 5 && level <= 8) return 3;
-    if (level >= 9) return 4;
+    if (level >= 9 && level <= 11) return 4;
+    if (level >= 12 && level <= 14) return 5;
+    if (level >= 15) return 6;
   };
 
 const getManhattanDistance = (pos1, pos2) => {
